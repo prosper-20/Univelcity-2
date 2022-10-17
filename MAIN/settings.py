@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'core.apps.CoreConfig',
+    "drf_spectacular", # new
 ]
 
 MIDDLEWARE = [
@@ -55,6 +56,14 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema", # new
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "CORE API Project",
+    "DESCRIPTION": "A sample app to learn about DRF",
+    "VERSION": "1.0.0",
+    # OTHER SETTINGS
 }
 
 ROOT_URLCONF = 'MAIN.urls'
